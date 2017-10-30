@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Submit</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" #name></ion-input>
+    </ion-item>
+    </ion-list>
+    <button ion-button outline (click)=" submitData(name.value); name.value='';">Primary Outline</button>
+    <ul class="names">
+      <li *ngFor="let name of names" >
+      
+    
+      </li>
+    </ul>
+    {{test}}
+    {{result}}
+  </ion-content>
