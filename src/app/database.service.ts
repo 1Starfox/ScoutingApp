@@ -2,7 +2,7 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite'
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
-import { Customer } from './customer';
+import { Team } from './Team';
 
 @Injectable()
 export class DatabaseService {
@@ -16,23 +16,22 @@ export class DatabaseService {
             location: 'default'
         }).then((db: SQLiteObject) => {
             this.db = db;
-            var d = 'drop table team';
-            db.executeSql(d,{});
-            db.executeSql(dd,{});
-            var dd = 'drop table desc';
-            var sql = 'create table IF NOT EXISTS team (teamid int PRIMARY KEY AUTOINCREMENT, teamName VARCHAR(255), teamNum int NOT NULL )';
+        
+            
+            var sql = 'create table IF NOT EXISTS team (teamid INTEGER PRIMARY KEY AUTOINCREMENT, teamName VARCHAR(255), teamNum int NOT NULL )';
+            console.log('Created 1st SQL Statement:'+ sql );
             var sql2 = 'create table IF NOT EXISTS desc (descid INTEGER NOT NULL PRIMARY KEY, desc VARCHAR(255), teamid INTEGER, FOREIGN KEY (teamid) REFERENCES team(teamid))';
+            console.log('Created 1st SQL Statement:'+ sql2 );
+            
             db.executeSql(sql, {})
                 .then(() => console.log('Executed 1st SQL Statement'))
-                .catch(e => console.log(e));
-            db.executeSql(sql2, {})
-                .then(() => {
-                    console.log('Executed 2nd Statement');
-                    this.submitData('MJ');
-                    this.view();
+                .then(() => db.executeSql(sql2, {})
+                                .then(() => console.log('Executed 2nd Statement'))
+                                .then(() => this.submitData('Brandon'))
+                                .catch((e)=> console.log(e)))
 
-                })
                 .catch(e => console.log(e));
+            
         })
             .catch(e => console.log(e));
             
@@ -67,6 +66,7 @@ export class DatabaseService {
         this.db.executeSql(sql, {})
             .then(() => this.result = true)
             .then(() => console.log("executed sql" + sql))
+            .then(() => this.view())
             .catch(e => console.log('fail: '+ JSON.stringify(e)));
 
         /* this.sqlPorter.importJsonToDb(this.dbObject, name)
@@ -115,12 +115,13 @@ export class DatabaseService {
                 if(result.rows.length > 0){
                     console.log(result.rows.item(0).teamName + result.rows.item(0).teamNum);
                 }
+                this.getData();
             })
     }
 
-    getData(): Promise<JSON> {
-        return this.sqlPorter.exportDbToJson(this.db)
-            .then(response => response.json().data)
+    getData(): void {
+         this.sqlPorter.exportDbToJson(this.db)
+            .then(response => console.log(JSON.stringify(response.data.inserts.team)))
             .catch(this.handleError);
 
 

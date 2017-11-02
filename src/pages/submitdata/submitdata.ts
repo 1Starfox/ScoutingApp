@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { } from ''
 import { DatabaseService } from '../../app/database.service';
-import { Customer } from '../../app/customer';
+import { Team } from '../../app/Team';
 import { AlertController } from 'ionic-angular';
 @Component({
     selector: 'page-submit',
@@ -15,8 +15,8 @@ import { AlertController } from 'ionic-angular';
 
 
 export class SubmitPage {
-    customers: Customer[];
-    test: string = 'dsdsd';
+    teams: Team[];
+    test: string = 'Baby OOhhh';
     
     
     
