@@ -1,3 +1,4 @@
+import { TeamData } from './../pages/teamData/teamData';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -10,10 +11,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SubmitPage } from '../pages/submitdata/submitdata';
 import { DatabaseService } from './database.service';
 import { SQLite } from '@ionic-native/sqlite';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
+import { LoadingService } from './loading.service';
+import { TeamPage } from '../pages/teamPage/teamPage';
+import { ModalService } from './modal.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter';
     AboutPage,
     ContactPage,
     HomePage,
-    SubmitPage,
+    TeamPage,
+    TeamData,
     TabsPage
   ],
   imports: [
@@ -34,7 +38,8 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter';
     AboutPage,
     ContactPage,
     HomePage,
-    SubmitPage,
+    TeamPage,
+    TeamData,
     TabsPage
   ],
   providers: [
@@ -43,6 +48,8 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter';
     DatabaseService,
     SQLite,
     SQLitePorter,
+    LoadingService,
+    ModalService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,0 +1,34 @@
+<ion-header>
+        
+    <ion-navbar>
+      
+      <ion-title>Submit</ion-title>
+
+      <ion-buttons end>
+      <button ion-button icon-only  color = "gold" (click) = "recieveData();">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" #name></ion-input>
+    </ion-item>
+    </ion-list>
+    <!--<button ion-button outline (click)=" submitData(name.value); name.value='';">Primary Outline</button>-->
+    <button ion-button outline (click)="submitData(name.value); name.value=''" >Submit</button>
+    
+    <ion-list>
+      <button ion-item *ngFor="let team of teams" (click) =" showModal(team.teamid);">
+        {{team.teamName}}
+      </button>
+    </ion-list>
+    {{test}}
+    <ion-fab right bottom>
+      <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+  </ion-content>

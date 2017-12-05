@@ -1,0 +1,40 @@
+{
+    "structure": {
+        "tables": {
+            "desc": "(descid INTEGER NOT NULL PRIMARY KEY, desc VARCHAR(255), teamid INTEGER, FOREIGN KEY (teamid) REFERENCES team(teamid))",
+            "team": "(teamid INTEGER PRIMARY KEY AUTOINCREMENT, teamName VARCHAR(255), teamNum int NOT NULL )"
+        }
+    },
+    "data": {
+        "inserts": {
+            "desc": [],
+            "team": [
+                {
+                    "teamid": 1,
+                    "teamName": "Brandon",
+                    "teamNum": 23
+                },
+                {
+                    "teamid": 2,
+                    "teamName": "Brandon",
+                    "teamNum": 23
+                },
+                {
+                    "teamid": 3,
+                    "teamName": "Brandon",
+                    "teamNum": 23
+                },
+                {
+                    "teamid": 4,
+                    "teamName": "Brandon",
+                    "teamNum": 23
+                },
+                {
+                    "teamid": 5,
+                    "teamName": "Brandon",
+                    "teamNum": 23
+                }
+            ]
+        }
+    }
+}
