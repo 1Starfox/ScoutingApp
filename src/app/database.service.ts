@@ -70,6 +70,7 @@ export class DatabaseService {
 
     }
 
+
     /* constructor(private sqlite: SQLite, private RealDB: SQLiteObject) {
          this.sqlite.create({
              name: 'data.db',
@@ -97,7 +98,10 @@ export class DatabaseService {
         var sql = "Insert into team (teamName, teamNum) VALUES ('" + name + "',23)";
         let promise = new Promise<any>((resolve) => {
             this.db.executeSql(sql, {})
-                .then((response) => { console.dir((response)); resolve(response) })
+                .then((response) => {
+                    console.dir((response));
+                    resolve(response);
+                     })
                 .catch((e) => console.log(e))
         })
         return promise;
@@ -119,7 +123,12 @@ export class DatabaseService {
         var sql = "Insert into teamDesc (desc, teamid) VALUES ('" + detail+ ","+ teamId +")";
         let promise = new Promise<any>((resolve) => {
             this.db.executeSql(sql, {})
-                .then((response) => {console.dir(response); resolve(response)})
+                .then((response) => {
+                    
+                    console.dir(response);
+                    resolve(response)
+                    
+                    })
                 .catch((e) => console.error(e))
         })
         return promise;

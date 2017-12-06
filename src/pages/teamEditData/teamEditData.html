@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>
+        
+<ion-title><div align="center">{{name}} Data!</div></ion-title>
+    </ion-navbar>
+    </ion-header>
+<ion-content padding>
+    <ion-item>
+        <ion-label color="primary" floating>Team Number</ion-label>
+        <ion-input type="number" #teamId></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Team Details</ion-label>
+        <ion-input #details></ion-input>
+      </ion-item>
+      <button ion-button outline (click)="SaveandDismiss(teamId.value,details.value); teamId.value=''; details.value=''" >Submit</button>
+</ion-content>

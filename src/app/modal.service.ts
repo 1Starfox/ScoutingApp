@@ -1,3 +1,4 @@
+import { TeamEdit } from './../pages/teamEditData/teamEditData';
 import { teamDesc } from './teamdesc';
 import { LoadingService } from './loading.service';
 import { Team } from './Team';
@@ -20,7 +21,19 @@ export class ModalService {
         return new Promise((resolve) => setTimeout(resolve, time));
     }
 
-    presentModal(value: any): void {
+    viewEditModal(value: any): void {
+        let promise = new Promise(() => {
+            this.ldg.presentLoading('Loading...');
+            
+            this.sleep(1500).then(() => {
+                let profileModal = this.modalCtrl.create(TeamEdit, {name : value});
+                this.ldg.dismissLoading();
+                profileModal.present();
+            })
+        })
+    }
+
+    viewTeamModal(value: any): void {
         let promise = new Promise(() => {
             this.ldg.presentLoading('Loading...');
             this.getData(value);

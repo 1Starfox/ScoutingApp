@@ -17,6 +17,8 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { LoadingService } from './loading.service';
 import { TeamPage } from '../pages/teamPage/teamPage';
 import { ModalService } from './modal.service';
+import { TeamEdit } from '../pages/teamEditData/teamEditData';
+import { ViewController } from 'ionic-angular/navigation/view-controller';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { ModalService } from './modal.service';
     ContactPage,
     HomePage,
     TeamPage,
+    TeamEdit,
     TeamData,
     TabsPage
   ],
@@ -40,6 +43,7 @@ import { ModalService } from './modal.service';
     HomePage,
     TeamPage,
     TeamData,
+    TeamEdit,
     TabsPage
   ],
   providers: [

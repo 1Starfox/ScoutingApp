@@ -67,7 +67,7 @@ export class TeamPage implements OnInit {
 
     
         submitData(name: string): void {
-            var result;
+           /* var result;
             console.log(JSON.stringify(this.dbService.getData()));
     
             this.showAlert(name);
@@ -77,19 +77,22 @@ export class TeamPage implements OnInit {
             if (name.length > 0) {
     
                 this.ldService.presentLoading("starting");
-                this.dbService.submitData(name).then((resolve) => {
-                    result = resolve;       
+                this.dbService.submitData(name
+                ).then((resolve) => {
+                    result = resolve; 
+                    if(result.rowsAffected == 1) {
+                        this.ldService.dismissLoading();
+                        this.showAlert(name)
+                        console.log("LV: "+result.insertId);
+                    } else {
+                        this.ldService.dismissLoading()
+                        this.showAlert('Did Not Submit')
+                        console.log(result);
+                    }      
                 } )
+                
     
-                if(result) {
-                    this.ldService.dismissLoading();
-                    this.showAlert('Submited');
-                    
-                } else {
-                    this.ldService.dismissLoading()
-                    this.showAlert('Did Not Submit')
-                    console.log(result);
-                }
+               
     
                 
     
@@ -97,12 +100,14 @@ export class TeamPage implements OnInit {
     
                 this.showAlert('Did Not Submit');
     
-            }
+            }*/
+            this.mdService.viewEditModal(name);
+        
         }
 
         
     showModal(value: any) : void {
-        this.mdService.presentModal(value);
+        this.mdService.viewTeamModal(value);
        /*this.dbService.getTeam(value).then((result) => {
            console.log(result);
        });*/
