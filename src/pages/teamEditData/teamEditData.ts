@@ -1,3 +1,4 @@
+import { DatabaseService } from './../../app/database.service';
 import { NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
@@ -11,13 +12,24 @@ import { ViewController } from 'ionic-angular/navigation/view-controller';
  */
 export class TeamEdit {
     name: any;
-    constructor(navParams: NavParams, private viewCtrl: ViewController){
+    constructor(private navParams: NavParams, private viewCtrl: ViewController, private dbService: DatabaseService){
+        this.getName();
+    }
+
+    ReturnName(): string {
+        return this.navParams.get('name');
+    }
+
+    getName(){
+        this.name=this.navParams.get('name');
         
-        this.name=navParams.get('name');
     }
 
     SaveandDismiss(id:number, details:string) {
-        let data = {id,details};
-        this.viewCtrl.dismiss(data);
+        var sdName =this.ReturnName();
+        console.log(sdName,id,details)
+        this.dbService.submitData(sdName,id);
+        this.dbService.submitDesc(details, id);
+        this.viewCtrl.dismiss();
     }
 }

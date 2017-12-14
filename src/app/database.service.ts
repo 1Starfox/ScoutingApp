@@ -40,7 +40,7 @@ export class DatabaseService {
 
                 console.log('Created 1st SQL Statement:' + sql);
 
-                var sql2 = 'create table IF NOT EXISTS desc (descid INTEGER NOT NULL PRIMARY KEY, desc VARCHAR(255), teamid INTEGER, FOREIGN KEY (teamid) REFERENCES team(teamid))';
+                var sql2 = 'create table IF NOT EXISTS desc (descid INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, desc VARCHAR(255), teamid INTEGER)';
 
                 console.log('Created 1st SQL Statement:' + sql2);
 
@@ -89,13 +89,13 @@ export class DatabaseService {
          
      }*/
 
-    submitData(name: string): Promise<any> {
+    submitData(name: string, id: number): Promise<any> {
         /*  this.dbObject.executeSql('INSERT INTO customer(name) VALUES(' + name + ') ', {})
               .then(() => console.log('Executed SQL'))
               .catch(e => console.log(e));*/
 
         var sucess;
-        var sql = "Insert into team (teamName, teamNum) VALUES ('" + name + "',23)";
+        var sql = "Insert into team (teamName, teamNum) VALUES ('" + name + "',"+id+")";
         let promise = new Promise<any>((resolve) => {
             this.db.executeSql(sql, {})
                 .then((response) => {
@@ -119,8 +119,8 @@ export class DatabaseService {
 
 
     }
-    submitDesc(teamId: Number, detail: string): Promise<any> {
-        var sql = "Insert into teamDesc (desc, teamid) VALUES ('" + detail+ ","+ teamId +")";
+    submitDesc(detail: string, teamId: Number): Promise<any> {
+        var sql = "Insert into desc (desc, teamid) VALUES ('" + detail+ "',"+ teamId +")";
         let promise = new Promise<any>((resolve) => {
             this.db.executeSql(sql, {})
                 .then((response) => {
@@ -201,10 +201,13 @@ export class DatabaseService {
     getTeamInfo(id: number): Promise<teamDesc> {
         var response;
         var sql = "Select * from desc WHERE teamid = " + id;
+        console.log(sql);
         let promise = new Promise<teamDesc>((resolve, reject) => {
             this.db.executeSql(sql, {})
                 .then((result) => {
                     resolve(result.rows.item(0) as teamDesc)
+                    console.log("baboomagain" , JSON.stringify(result));
+                    
                 })
                 .catch(e => reject(console.log(e)))
         })

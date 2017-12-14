@@ -37,7 +37,7 @@ export class ModalService {
         let promise = new Promise(() => {
             this.ldg.presentLoading('Loading...');
             this.getData(value);
-            this.sleep(1500).then(() => {
+            this.sleep(2500).then(() => {
                 console.log(this.team);
                 let profileModal = this.modalCtrl.create(TeamData, { team: this.team, teamDesc: this.teamDesc})
                 this.ldg.dismissLoading();
@@ -53,8 +53,8 @@ export class ModalService {
 
     getData(id: number): void {
        
-        this.dbService.getTeam(id).then((team) => this.team = team);
-        this.dbService.getTeamInfo(id).then((teamDesc) => this.teamDesc = teamDesc);
+        this.dbService.getTeam(id).then((team) => this.team = team).then(() => console.log("Got Team"));
+        this.dbService.getTeamInfo(id).then((teamDesc) => this.teamDesc = teamDesc).then(() => console.log("Got Data"));
 
 
 
