@@ -2,7 +2,7 @@ import { TeamEdit } from './../pages/teamEditData/teamEditData';
 import { teamDesc } from './teamdesc';
 import { LoadingService } from './loading.service';
 import { Team } from './Team';
-import { DatabaseService } from './database.service';
+import { DatabaseService } from './teamdatabase.service';
 import { NavParams, ModalController } from "ionic-angular";
 import { TeamData } from "../pages/teamData/teamData";
 import { Injectable } from "@angular/core";
@@ -39,7 +39,7 @@ export class ModalService {
             this.getData(value);
             this.sleep(2500).then(() => {
                 console.log(this.team);
-                let profileModal = this.modalCtrl.create(TeamData, { team: this.team, teamDesc: this.teamDesc})
+                let profileModal = this.modalCtrl.create(TeamData, { team: this.team, /*teamDesc: this.teamDesc*/})
                 this.ldg.dismissLoading();
                 profileModal.present();
                 
@@ -53,8 +53,11 @@ export class ModalService {
 
     getData(id: number): void {
        
-        this.dbService.getTeam(id).then((team) => this.team = team).then(() => console.log("Got Team"));
-        this.dbService.getTeamInfo(id).then((teamDesc) => this.teamDesc = teamDesc).then(() => console.log("Got Data"));
+        this.dbService.getTeam(id)
+            .then((team) => this.team = team)
+            .then(() => console.log("Got Team"));
+
+       
 
 
 

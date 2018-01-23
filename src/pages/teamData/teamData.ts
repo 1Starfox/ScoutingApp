@@ -14,9 +14,9 @@ export class TeamData {
     values: Team;
     constructor(public navParams: NavParams) {
         console.log('UserId', navParams.get('team'));
-        console.log('data', navParams.get('teamDesc'));
+       // console.log('data', navParams.get('teamDesc'));
         this.values= navParams.get('team');
-        this.desc = navParams.get('teamDesc');
+        //this.desc = navParams.get('teamDesc');
         
     }
 

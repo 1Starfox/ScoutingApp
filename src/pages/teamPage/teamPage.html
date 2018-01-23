@@ -23,9 +23,11 @@
     <button ion-button outline (click)="submitData(name.value); name.value=''" >Submit</button>
     
     <ion-list>
-      <button ion-item *ngFor="let team of teams" (click) =" showModal(team.teamid);">
+      <ion-item-sliding>
+      <button ion-item *ngFor="let team of teams" (click) =" showModal(team.teamid);" (press)="pressEvent($event,team.teamid)">
         {{team.teamName}}
       </button>
+      </ion-item-sliding>
     </ion-list>
     {{test}}
     <ion-fab right bottom>

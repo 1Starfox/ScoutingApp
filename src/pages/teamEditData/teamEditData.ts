@@ -1,4 +1,4 @@
-import { DatabaseService } from './../../app/database.service';
+import { DatabaseService } from './../../app/teamdatabase.service';
 import { NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
@@ -28,8 +28,7 @@ export class TeamEdit {
     SaveandDismiss(id:number, details:string) {
         var sdName =this.ReturnName();
         console.log(sdName,id,details)
-        this.dbService.submitData(sdName,id);
-        this.dbService.submitDesc(details, id);
+        this.dbService.submitData(sdName,id,details);
         this.viewCtrl.dismiss();
     }
 }

@@ -11,7 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { DatabaseService } from './database.service';
+import { DatabaseService } from './teamdatabase.service';
 import { SQLite } from '@ionic-native/sqlite';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { LoadingService } from './loading.service';
@@ -19,6 +19,7 @@ import { TeamPage } from '../pages/teamPage/teamPage';
 import { ModalService } from './modal.service';
 import { TeamEdit } from '../pages/teamEditData/teamEditData';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
+import { File } from '@ionic-native/file';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ViewController } from 'ionic-angular/navigation/view-controller';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,6 +54,7 @@ import { ViewController } from 'ionic-angular/navigation/view-controller';
     DatabaseService,
     SQLite,
     SQLitePorter,
+    File,
     LoadingService,
     ModalService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
