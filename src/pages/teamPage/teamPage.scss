@@ -1,3 +1,48 @@
 page-submit {
     
 }
+
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+$color-maroon: #7D2E3D;
+$color-gray: #555758;
+$color-gold: #FFBB00;
+
+ion-scroll.scroll-y .scroll-content::-webkit-scrollbar {
+  display: none;
+}
+
+.hamburger-button {
+    color: white;
+    background-color: $color-gray;
+    font-size: 35px;
+    text-align: center;
+    border: 0px solid transparent;
+}
+
+.hamburger-button:active {
+    background-color: $color-gold;
+}
+
+.red {
+    background-color: red;
+}
+
+#hamburgermenu {
+    background-color: $color-gray;
+}

@@ -1,3 +1,4 @@
+import { TeamPage } from './../pages/teamPage/teamPage';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -14,6 +15,7 @@ export class MyApp {
 
   homePage = HomePage;
   aboutPage = AboutPage;
+  teamPage= TeamPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

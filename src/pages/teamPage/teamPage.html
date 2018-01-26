@@ -4,7 +4,7 @@
       <ion-icon name="refresh"></ion-icon>
     </button>
     </ion-buttons>
-    <ion-content padding style="background: #FF0000;">
+    <ion-content padding style="background: #7D2E3D;">
       <button ion-button menuToggle right id="hamburger">
           <ion-icon name="menu"></ion-icon>
       </button>
@@ -29,11 +29,11 @@
     <button ion-button outline (click)="submitData(name.value); name.value=''" >Submit</button>
 
     <ion-list>
-      <ion-item-sliding>
-      <button ion-item *ngFor="let team of teams" (click) =" showModal(team.teamid);" (press)="pressEvent($event,team.teamid)">
+      <ion-item  *ngFor="let team of teams">
+      <button ion-item (click) =" showModal(team.teamid);" (press)="pressEvent($event,team.teamid)">
         {{team.teamName}}
       </button>
-      </ion-item-sliding>
+      </ion-item>
     </ion-list>
     {{test}}
     <ion-fab right bottom>
