@@ -6,22 +6,22 @@
   </ion-header> -->
   <ion-content id="hamburgermenu">
     <ion-list no-lines>
-    <button ion-item (click)="closeMenu()" class="hamburger-button red">
+    <button tappable ion-item (click)="closeMenu()" class="hamburger-button red">
         <ion-icon name="md-close"></ion-icon>
     </button>
-      <button ion-item (click)="openPage(homePage)" class="hamburger-button">
+      <button tappable ion-item (click)="openPage(homePage)" class="hamburger-button">
          <ion-icon name="ios-home"></ion-icon>
       </button>
-      <button ion-item (click)="openPage(aboutPage)" class="hamburger-button">
+      <button tappable ion-item (click)="openPage(aboutPage)" class="hamburger-button">
         <ion-icon name="ios-information-circle"></ion-icon>
       </button>
-      <button ion-item (click)="openPage(statsPage)" class="hamburger-button">
+      <button tappable ion-item (click)="openPage(statsPage)" class="hamburger-button">
         <ion-icon name="ios-stats"></ion-icon>
       </button>
-      <button ion-item (click)="openPage(teamPage)" class="hamburger-button">
+      <button tappable ion-item (click)="openPage(teamPage)" class="hamburger-button">
         <ion-icon name="ios-people"></ion-icon>
       </button>
-      <button ion-item (click)="openPage(settingsPage)" class="hamburger-button">
+      <button tappable ion-item (click)="openPage(settingsPage)" class="hamburger-button">
         <ion-icon name="md-settings"></ion-icon>
       </button>
     </ion-list>
