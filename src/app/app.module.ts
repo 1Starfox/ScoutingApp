@@ -18,7 +18,6 @@ import { ModalService } from './modal.service';
 import { TeamEdit } from '../pages/teamEditData/teamEditData';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
 import { File } from '@ionic-native/file';
-import { MenuPage } from '../pages/menu/menu'
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { MenuPage } from '../pages/menu/menu'
     HomePage,
     TeamPage,
     TeamEdit,
-    TeamData,
-    MenuPage
+    TeamData
   ],
   imports: [
     BrowserModule,
@@ -44,8 +42,7 @@ import { MenuPage } from '../pages/menu/menu'
     HomePage,
     TeamPage,
     TeamData,
-    TeamEdit,
-    MenuPage
+    TeamEdit
   ],
   providers: [
     StatusBar,
