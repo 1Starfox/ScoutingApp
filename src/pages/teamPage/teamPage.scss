@@ -39,9 +39,10 @@ ion-scroll.scroll-y .scroll-content::-webkit-scrollbar {
     background-color: $color-gold;
 }
 
-.red {
-    background-color: red;
+.maroonred {
+    background-color: $color-maroon;
 }
+
 
 #hamburgermenu {
     background-color: $color-gray;

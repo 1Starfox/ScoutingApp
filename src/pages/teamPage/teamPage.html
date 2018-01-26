@@ -18,7 +18,7 @@
       </ion-buttons>
 
 
-<ion-content padding>
+<ion-content padding class="maroonred">
   <ion-list>
     <ion-item>
       <ion-label stacked>Name</ion-label>
@@ -28,7 +28,7 @@
     <!--<button ion-button outline (click)=" submitData(name.value); name.value='';">Primary Outline</button>-->
     <button ion-button outline (click)="submitData(name.value); name.value=''" >Submit</button>
 
-    <ion-list>
+    <ion-list no-lines >
       <ion-item  *ngFor="let team of teams">
       <button ion-item (click) =" showModal(team.teamid);" (press)="pressEvent($event,team.teamid)">
         {{team.teamName}}
