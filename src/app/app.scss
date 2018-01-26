@@ -15,8 +15,6 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-.hamburger-menu {
-    background-color: #00ff00;
-    overflow: hidden;
-    width: 50px;
+ion-scroll.scroll-y .scroll-content::-webkit-scrollbar{
+  display: none;
 }
