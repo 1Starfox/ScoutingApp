@@ -1,7 +1,14 @@
-<ion-header>
-        
-    <ion-navbar>
-      
+
+<ion-buttons end>
+    <button ion-button icon-only  color = "gold" (click) = "recieveData();">
+      <ion-icon name="refresh"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-content padding style="background: #FF0000;">
+      <button ion-button menuToggle right id="hamburger">
+          <ion-icon name="menu"></ion-icon>
+      </button>
+
       <ion-title>Submit</ion-title>
 
       <ion-buttons end>
@@ -9,8 +16,7 @@
         <ion-icon name="refresh"></ion-icon>
       </button>
       </ion-buttons>
-    </ion-navbar>
-  </ion-header>
+
 
 <ion-content padding>
   <ion-list>
@@ -21,7 +27,7 @@
     </ion-list>
     <!--<button ion-button outline (click)=" submitData(name.value); name.value='';">Primary Outline</button>-->
     <button ion-button outline (click)="submitData(name.value); name.value=''" >Submit</button>
-    
+
     <ion-list>
       <ion-item-sliding>
       <button ion-item *ngFor="let team of teams" (click) =" showModal(team.teamid);" (press)="pressEvent($event,team.teamid)">
