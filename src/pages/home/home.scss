@@ -1,7 +1,23 @@
-
 #hamburger {
     background-color: transparent;
     box-shadow: none;
     font-size: 30px;
     margin-left: -20px;
+    color: #000;
+    display: inline-block;
+}
+
+@font-face {
+    font-family: 'Playfair Display Regular';
+    src: url(../../assets/fonts/PlayfairDisplay-Regular.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Playfair Display Bold';
+    src: url(../../assets/fonts/PlayfairDisplay-Bold.otf) format("opentype");
+}
+
+h1 {
+    font-family: 'Playfair Display Bold' !important;
+    font-size: 50px;
 }

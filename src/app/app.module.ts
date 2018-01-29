@@ -31,14 +31,7 @@ import { File } from '@ionic-native/file';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, {
-      platforms: {
-        android: {
-             activator: 'none'
-        }
-      }
-    }, {}
-
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
