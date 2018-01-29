@@ -29,7 +29,14 @@
     <button ion-button outline (click)="submitData(name.value); name.value=''" >Submit</button>
 
     <ion-list no-lines id="il">
-      
+      <!-- <ion-item *ngFor="let team of teams" class = "maroonred">          
+        <button ion-button clear (click) =" showModal(team.teamid);" (press)="pressEvent($event,team.teamid)" class = "maroonred">
+            <ion-avatar item-start>
+                <img src=team.teamImg>
+              </ion-avatar>
+          {{team.teamName}}
+        </button>
+        </ion-item> -->
     </ion-list>
     <ion-fab right bottom>
       <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>

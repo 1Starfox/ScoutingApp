@@ -81,8 +81,8 @@
     <allow-navigation href="http://192.168.0.114:8100" />
     <allow-navigation href="http://192.168.0.105:8100" />
     <engine name="android" spec="^6.3.0" />
-    <engine name="ios" spec="^4.5.4" />
-    <engine name="windows" spec="^5.0.0" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="windows" spec="5.0.0" />
     <plugin name="com-badrit-base64" spec="^0.2.0" />
     <plugin name="cordova-plugin-advanced-http" spec="^1.9.1" />
     <plugin name="cordova-plugin-device" spec="^1.1.7" />

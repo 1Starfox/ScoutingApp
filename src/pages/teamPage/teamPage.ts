@@ -44,6 +44,7 @@ export class TeamPage implements OnInit {
         this.test = " LOOK AT CONSOLE";
         this.dbService.getData().then(teams => this.teams = teams).then(() => console.log(this.teams[0]));
         console.log("recieved Teams");
+        this.presentData();
 
 
     }
@@ -76,17 +77,19 @@ export class TeamPage implements OnInit {
 
     }
      presentData() {
-        for(var i = 0; i< this.teams.length; i++){
-            this.html = this.html + `
-            <ion-item class = "maroonred">          
-            <button ion-button clear (click) =" showModal(`+this.teams[i].teamid+`);" (press)="pressEvent($event,`+this.teams[i].teamid+`)" class = "maroonred">
-                <ion-avatar item-start>
-                    <img src="data:image/png;base64, `+ this.teams[i].teamImg+ `>
-                  </ion-avatar>
-              {{team.teamName}}
-            </button>
-            </ion-item> `
-        }
+        //for(var i = 0; i< this.teams.length; i++){
+         this.html =  `
+          <ion-item class = "maroonred">          
+        <button ion-button clear (click) =" showModal(`+this.teams[0].teamid+`);" (press)="pressEvent($event,`+this.teams[0].teamid+`)" class = "maroonred">
+         <ion-avatar item-start>
+              <img src="data:image/png;base64, `+ this.teams[0].teamImg+ `>
+                 </ion-avatar>
+          {{team.teamName}}
+          </button>
+          </ion-item> `
+        // }
+        //this.html="<p>Hello World</p>"
+        console.log(this.html);
         document.getElementById("il").innerHTML = this.html;
     }
 
