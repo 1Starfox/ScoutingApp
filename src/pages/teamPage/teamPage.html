@@ -1,4 +1,4 @@
-
+<canvas id="cnvs" height="500" width="500"></canvas>
 <ion-buttons end>
     <button ion-button icon-only  color = "gold" (click) = "recieveData();">
       <ion-icon name="refresh"></ion-icon>
@@ -28,14 +28,9 @@
     <!--<button ion-button outline (click)=" submitData(name.value); name.value='';">Primary Outline</button>-->
     <button ion-button outline (click)="submitData(name.value); name.value=''" >Submit</button>
 
-    <ion-list no-lines >
-      <ion-item  *ngFor="let team of teams">
-      <button ion-item (click) =" showModal(team.teamid);" (press)="pressEvent($event,team.teamid)">
-        {{team.teamName}}
-      </button>
-      </ion-item>
+    <ion-list no-lines id="il">
+      
     </ion-list>
-    {{test}}
     <ion-fab right bottom>
       <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>
     </ion-fab>

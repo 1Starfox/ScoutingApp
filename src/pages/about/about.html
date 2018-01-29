@@ -1,17 +1,24 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
       About
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
+<ion-content id="content"padding style="background: #7D2E3D;">
+    <button ion-button menuToggle right id="hamburger">
+        <ion-icon name="menu"></ion-icon>
+    </button>
 <p id="value"></p>
   <ion-buttons>
-    <button ion-button icon-only  color = "gold" (click) = "view();">
+    <button ion-button icon-only  color = "gold" (click) = "canvastest();">
       <ion-icon name="refresh"></ion-icon>
     </button>
     </ion-buttons>
+    <div id = "div"></div>
 
+
+    <canvas id="cnvs" height="200" width="200" style="border:1px solid #148a53;"></canvas>
+    
 </ion-content>

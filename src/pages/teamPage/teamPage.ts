@@ -11,6 +11,7 @@ import { ModalService } from '../../app/modal.service';
 import { ActionSheetController } from 'ionic-angular/components/action-sheet/action-sheet-controller';
 import { HTTP } from '@ionic-native/http';
 
+
 @Component({
     selector: 'page-submit', 
     templateUrl: 'teamPage.html',
@@ -26,10 +27,10 @@ export class TeamPage implements OnInit {
     ready: boolean = this.dbService.ready;
 
     public loading;
-
+    html: string;
     test: string = 'Baby OOhhh';
 
-
+  
 
     constructor(public navCtrl: NavController, private ldgController: LoadingController,
         private dbService: DatabaseService, private alertCtrl: AlertController,
@@ -53,6 +54,9 @@ export class TeamPage implements OnInit {
             if (this.dbService.ready) {
                 this.ldService.dismissLoading();
                 this.recieveData();
+                this.presentData();
+                
+               // this.canvastest();
             } else {
                 this.ldService.dismissLoading();
                 this.ngOnInit();
@@ -61,11 +65,29 @@ export class TeamPage implements OnInit {
 
         })
 
+         
+        
+
         function sleep(time) {
             return new Promise((resolve) => setTimeout(resolve, time));
         }
 
 
+
+    }
+     presentData() {
+        for(var i = 0; i< this.teams.length; i++){
+            this.html = this.html + `
+            <ion-item class = "maroonred">          
+            <button ion-button clear (click) =" showModal(`+this.teams[i].teamid+`);" (press)="pressEvent($event,`+this.teams[i].teamid+`)" class = "maroonred">
+                <ion-avatar item-start>
+                    <img src="data:image/png;base64, `+ this.teams[i].teamImg+ `>
+                  </ion-avatar>
+              {{team.teamName}}
+            </button>
+            </ion-item> `
+        }
+        document.getElementById("il").innerHTML = this.html;
     }
 
     pressEvent(e, f) {

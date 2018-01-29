@@ -34,9 +34,45 @@ export class AboutPage implements OnInit {
       })
     
      this.ldg.dismissLoading();*/
+     this.canvas = <HTMLCanvasElement>document.getElementById('cnvs');
+     this.ctx = this.canvas.getContext("2d");
 
   }
-a
+
+  canvas: HTMLCanvasElement;
+  ctx: CanvasRenderingContext2D;
+  element: HTMLImageElement;
+
+  canvastest() {
+    this.element = document.createElement("img");
+    var text = "Brandon 'FuFu' Gong";
+    var fontsize = 300;
+    this.ctx.font = "300px Verdana";
+    while(this.ctx.measureText(text.toString()).width>this.canvas.width){
+      fontsize--;
+      this.ctx.font= fontsize +"px Verdana"
+    }
+    var gradient = this.ctx.createLinearGradient(0,0,200, 0);
+    gradient.addColorStop(0,"magenta");
+    gradient.addColorStop(.5,"blue");
+    gradient.addColorStop(1,"red");
+    this.ctx.fillStyle = gradient;
+    this.ctx.textAlign = "center";
+    var txtsize = this.ctx.measureText("5002").width;
+    this.ctx.textBaseline = "middle";
+
+    this.ctx.fillText(text,100,100);
+
+    var dataUrl = this.canvas.toDataURL();
+    this.element.src = dataUrl;
+    document.getElementById("div").appendChild(this.element);
+
+
+}
+
+fittext(t){
+  
+}
   view() {
     
   
