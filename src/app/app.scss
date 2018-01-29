@@ -42,3 +42,13 @@ ion-scroll.scroll-y .scroll-content::-webkit-scrollbar {
 #hamburgermenu {
     background-color: $color-gray;
 }
+
+@font-face {
+    font-family: 'Playfair Display Regular';
+    src: url(../assets/fonts/PlayfairDisplay-Regular.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'Playfair Display Bold';
+    src: url(../assets/fonts/PlayfairDisplay-Bold.otf) format("opentype");
+}
