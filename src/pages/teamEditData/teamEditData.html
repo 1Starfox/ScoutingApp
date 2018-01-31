@@ -7,12 +7,12 @@
 <ion-content padding>
     <ion-item>
         <ion-label color="primary" floating>Team Number</ion-label>
-        <ion-input type="number" #teamId></ion-input>
+        <ion-input type="number" id="teamId" #teamId></ion-input>
       </ion-item>
       <ion-item>
         <ion-label color="primary" floating>Team Details</ion-label>
         <ion-input #details></ion-input>
       </ion-item>
-      <button ion-button outline (click)="SaveandDismiss(teamId.value,details.value); teamId.value=''; details.value=''" >Submit</button>
+      <button ion-button block outline (click)="SaveandDismiss(teamId.value,details.value); teamId.value=''; details.value=''" >Submit</button>
+      <canvas id="editcnvs" height="200" width="200" style="border:1px solid #148a53;"></canvas>
 </ion-content>
-<canvas id="cnvs" height="200" width="200" style="border:1px solid #148a53;"></canvas>

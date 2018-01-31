@@ -5,7 +5,8 @@ import { MenuController } from 'ionic-angular';
 
 @Component({
     selector: 'page-home',
-    templateUrl: 'home.html'
+    templateUrl: 'home.html',
+    
 })
 
 export class HomePage {

@@ -44,34 +44,33 @@ export class AboutPage implements OnInit {
   element: HTMLImageElement;
 
   canvastest() {
-    this.element = document.createElement("img");
-    var text = "Brandon 'FuFu' Gong";
-    var fontsize = 300;
-    this.ctx.font = "300px Verdana";
-    while(this.ctx.measureText(text.toString()).width>this.canvas.width){
-      fontsize--;
-      this.ctx.font= fontsize +"px Verdana"
-    }
-    var gradient = this.ctx.createLinearGradient(0,0,200, 0);
-    gradient.addColorStop(0,"magenta");
-    gradient.addColorStop(.5,"blue");
-    gradient.addColorStop(1,"red");
-    this.ctx.fillStyle = gradient;
-    this.ctx.textAlign = "center";
-    var txtsize = this.ctx.measureText("5002").width;
-    this.ctx.textBaseline = "middle";
-
-    this.ctx.fillText(text,100,100);
-
-    var dataUrl = this.canvas.toDataURL();
-    this.element.src = dataUrl;
-    document.getElementById("div").appendChild(this.element);
+    this.ctx.fillStyle = "#FFFFFF"
+    this.ctx.fillRect(0,0,this.canvas.width, this.canvas.height)
+    // this.element = document.createElement("img");
+    var text = "Avery";
+     var fontsize = 300;
+     this.ctx.font = "300px Verdana";
+    this.fittext(text);
+     var gradient = this.ctx.createLinearGradient(0,0,200, 0);
+     gradient.addColorStop(0,"magenta");
+     gradient.addColorStop(.5,"blue");
+     gradient.addColorStop(1,"red");
+     this.ctx.fillStyle = gradient;
+     this.ctx.textAlign = "center";
+     this.ctx.textBaseline = "middle";
+     this.ctx.fillText(text,100,100);
+    // this.element.src = dataUrl;
+    // //document.getElementById("div").appendChild(this.element);
 
 
 }
 
 fittext(t){
-  
+  var fontsize = 300;
+  while(this.ctx.measureText(t.toString()).width>this.canvas.width){
+    fontsize--;
+    this.ctx.font= fontsize +"px Verdana"
+  }
 }
   view() {
     
