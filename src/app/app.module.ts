@@ -15,6 +15,7 @@ import { SQLite } from '@ionic-native/sqlite';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { LoadingService } from './loading.service';
 import { TeamPage } from '../pages/teamPage/teamPage';
+import {ChartsPage } from '../pages/Charts/Charts';
 import { ModalService } from './modal.service';
 import { TeamEdit } from '../pages/teamEditData/teamEditData';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
@@ -29,7 +30,9 @@ import { File } from '@ionic-native/file';
     TeamPage,
     TeamEdit,
     TeamData,
+    ChartsPage,
     StatsPage
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { File } from '@ionic-native/file';
     TeamPage,
     TeamData,
     TeamEdit,
+    ChartsPage,
     StatsPage
   ],
   providers: [
