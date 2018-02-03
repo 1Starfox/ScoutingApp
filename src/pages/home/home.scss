@@ -1,11 +1,36 @@
-#hamburger {
-    background-color: transparent;
-    box-shadow: none;
-    font-size: 30px;
-    margin-left: -20px;
-    color: #000;
+ #hamburger {
+     background-color: transparent;
+     box-shadow: none;
+     font-size: 30px;
+     margin-left: -20px;
+     color: rgb(234, 0, 255);
+ }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
+li {
+    display: inline;
+    padding: 8px;
+}
+.head {
+position: fixed;
+margin: auto;
+border: solid;
+display: inline;
+vertical-align: middle;
 
+}
+.headelements {
+    float: left;
+    line-height: 200px;
+}
+.headtext {
+    font-family: 'Playfair Display Bold' !important;
+    vertical-align: middle;
+    font-size: 30px;
+}
 @font-face {
     font-family: 'Playfair Display Regular';
     src: url(../../assets/fonts/PlayfairDisplay-Regular.otf) format("opentype");
@@ -16,10 +41,8 @@
     src: url(../../assets/fonts/PlayfairDisplay-Bold.otf) format("opentype");
 }
 
-h1 {
-    font-family: 'Playfair Display Bold' !important;
-    font-size: 50px;
-}
-ion-content {
-    background-image: url('/img/frc5002.png')
-}
+// page-home {
+//     font-family: 'Playfair Display Bold' !important;
+//     font-size: 50px;
+// }
+

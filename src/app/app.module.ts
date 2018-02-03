@@ -1,3 +1,4 @@
+import { StatsPage } from './../pages/stats/stats';
 import { TeamData } from './../pages/teamData/teamData';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +28,8 @@ import { File } from '@ionic-native/file';
     HomePage,
     TeamPage,
     TeamEdit,
-    TeamData
+    TeamData,
+    StatsPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { File } from '@ionic-native/file';
     HomePage,
     TeamPage,
     TeamData,
-    TeamEdit
+    TeamEdit,
+    StatsPage
   ],
   providers: [
     StatusBar,

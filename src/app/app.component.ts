@@ -1,6 +1,7 @@
+import { StatsPage } from './../pages/stats/stats';
 import { TeamPage } from './../pages/teamPage/teamPage';
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home'
@@ -16,8 +17,9 @@ export class MyApp {
   homePage = HomePage;
   aboutPage = AboutPage;
   teamPage= TeamPage;
+  statsPage = StatsPage;
 
-  constructor(platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen, private menuctrl: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -30,5 +32,8 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page);
+  }
+  closeMenu() {
+    this.menuctrl.close();
   }
 }
