@@ -13,12 +13,13 @@ import {ChartsPage } from '../pages/Charts/Charts';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = ChartsPage;
+  rootPage: any = HomePage;
 
   homePage = HomePage;
   aboutPage = AboutPage;
   teamPage= TeamPage;
   statsPage = StatsPage;
+  ChartsPage = ChartsPage;
 
   constructor(platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen, private menuctrl: MenuController) {
     platform.ready().then(() => {

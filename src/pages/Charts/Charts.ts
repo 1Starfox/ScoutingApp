@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js'
 
 @Component({
   selector: 'Charts',
   templateUrl: 'Charts.html'
 })
-export class ChartsPage {
-  constructor() {
+export class ChartsPage implements OnInit {
+  p: any;
+   vari: any;
+  ngOnInit(): void {
 
-  }
-}
-function init(){
   var canvas =  <HTMLCanvasElement> document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
   console.log('not here')
@@ -29,9 +28,10 @@ function init(){
       }]
     }
   });
+
   myChart.update();
   ctx.font ="30px Verdana"
   ctx.fillText("Hello World",100,100)
+}
   //console.log(myChart);
 }
-document.addEventListener("DOMContentLoaded", init, false);
