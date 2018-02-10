@@ -6,7 +6,7 @@ import { MenuController } from 'ionic-angular';
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html',
-    
+
 })
 
 export class HomePage {
@@ -26,5 +26,8 @@ export class HomePage {
     // toggleMenu() {
     //     this.menuCtrl.toggle('hello');
     // }
+
+
+
 
 }
