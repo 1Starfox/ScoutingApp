@@ -3,7 +3,7 @@ import { Chart } from 'chart.js'
 import { ActionSheetController } from 'ionic-angular';
 
 @Component({
-  selector: 'Charts',
+  selector: 'charts-page',
   templateUrl: 'Charts.html'
 })
 export class ChartsPage implements OnInit {

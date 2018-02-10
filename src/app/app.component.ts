@@ -19,7 +19,7 @@ export class MyApp {
   aboutPage = AboutPage;
   teamPage= TeamPage;
   statsPage = StatsPage;
-  ChartsPage = ChartsPage;
+  chartPage = ChartsPage;
 
   constructor(platform: Platform, private statusBar: StatusBar, splashScreen: SplashScreen, private menuctrl: MenuController) {
     platform.ready().then(() => {
