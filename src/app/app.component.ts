@@ -28,6 +28,7 @@ export class MyApp {
       //statusBar.styleDefault();
       splashScreen.hide();
       statusBar.hide();
+      platform.platforms();
     });
   }
   openPage(page) {
