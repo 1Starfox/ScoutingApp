@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home'
 import { AboutPage } from '../pages/about/about'
 import {ChartsPage } from '../pages/Charts/Charts';
+import { BrowserTeamPage } from '../pages/browserPages/teamBrowserPage/teamBrowserPage';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +18,7 @@ export class MyApp {
 
   homePage = HomePage;
   aboutPage = AboutPage;
-  teamPage= TeamPage;
+  teamPage: any= TeamPage;
   statsPage = StatsPage;
   chartPage = ChartsPage;
 
@@ -28,7 +29,13 @@ export class MyApp {
       //statusBar.styleDefault();
       splashScreen.hide();
       statusBar.hide();
-      platform.platforms();
+      console.log(platform.platforms());
+      var plat = platform.platforms();
+      if(plat[0] == "core"){
+        // var teamButton = <HTMLButtonElement> document.getElementById("teamPageButton");
+        // teamButton.disabled = true;
+        this.teamPage = BrowserTeamPage;
+      }
     });
   }
   openPage(page) {

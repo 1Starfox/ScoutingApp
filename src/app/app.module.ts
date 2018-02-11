@@ -1,9 +1,11 @@
+import { TeamWebSQL } from './teamwebsql.module.service';
 import { StatsPage } from './../pages/stats/stats';
 import { TeamData } from './../pages/teamData/teamData';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -20,6 +22,7 @@ import { ModalService } from './modal.service';
 import { TeamEdit } from '../pages/teamEditData/teamEditData';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
 import { File } from '@ionic-native/file';
+import { BrowserTeamPage } from '../pages/browserPages/teamBrowserPage/teamBrowserPage';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,17 @@ import { File } from '@ionic-native/file';
     TeamEdit,
     TeamData,
     ChartsPage,
-    StatsPage
+    StatsPage,
+    BrowserTeamPage
 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+         driverOrder: ['websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,7 +56,8 @@ import { File } from '@ionic-native/file';
     TeamData,
     TeamEdit,
     ChartsPage,
-    StatsPage
+    StatsPage,
+    BrowserTeamPage
   ],
   providers: [
     StatusBar,
@@ -59,6 +68,7 @@ import { File } from '@ionic-native/file';
     File,
     LoadingService,
     ModalService,
+    TeamWebSQL,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
