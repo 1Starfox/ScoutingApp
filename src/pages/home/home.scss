@@ -64,7 +64,7 @@ body, html {
 
 .paralax1{
   /* The image used */
-  background-image: url('https://files.slack.com/files-pri/T62EKR0G5-F8X3SUF8X/frc_button_maroon_5002_no_bk_3.png' );
+  background-image: url(../../assets/images/DRL.png);
   background-size: contain;
 
 //  transform: scale(.25);
@@ -84,7 +84,7 @@ body, html {
 .paralax2{
   /* The image used */
 
-  background-image: url('https://www.firstinspires.org/sites/default/files/uploads/resource_library/brand/FIRST_Horz_RGB.jpg');
+  background-image: url(../../assets/images/FirstLogo.jpg);
   background-repeat: repeat-x;
   background-position: 0px 10px;
 
@@ -110,7 +110,7 @@ border: 15px solid black;
 background-color: #dbd5d2;
 }
 #myBtn {
-    display: none; /* Hidden by default */
+//    display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
     bottom: 20px; /* Place the button at the bottom of the page */
     right: 30px; /* Place the button 30px from the right */

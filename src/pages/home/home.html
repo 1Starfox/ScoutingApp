@@ -6,6 +6,8 @@
 </ion-header>-->
 
 <ion-content padding style="background: #525172;">
+
+
     <ul>
       <li><button ion-button menuToggle right id="hamburger">
         <ion-icon name="menu"></ion-icon>
@@ -40,7 +42,7 @@
 
   </div>
 
-  <div class='paralax2' style="height:400px"></div>
+  <div class='paralax2' style='height:250px'></div>
   <div id='body'>
     This app was desgned for the purpse of helping teams organize and gather data about other competeing frc teams. This app provides many
     differant and varrying ways of observing the data that is inserted into it. The graphs tab provides a wide variety of options of data
@@ -48,9 +50,13 @@
     along with a button that will prompt a window with options for a new team.
 
 </div>
-<button tappable ion-item (click)="topfuntion()" class='GoToTop'>
-  <ion-icon name='arrow-dropup'></ion-icon>
-</button>
+    <script>
+    topFunction()
+    scrollFunction()
+    </script>
 
+    <button  onclick="topFunction()" id='myBtn' title="GoToTop">
+      Top
+    </button>
 
 </ion-content>
