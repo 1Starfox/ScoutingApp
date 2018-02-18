@@ -18,8 +18,15 @@
     <h2>Chart.js — Line Chart Demo</h2>
     <div>
       <p> Heelo</p>
-      <button ion-button block (click)="presentActionSheet()">Settings</button>
-      <canvas id="myCanvas" width="100" length="100" style="border: 2px solid black;"></canvas>
+      <button ion-button block (click)="mainSheet()">Settings</button>
+      <div id='TeamWins'>
+      <canvas id="apples" width="100" length="100" style="border: 2px solid black;" hidewhen></canvas>
+      </div>
+    <button ion-button tappable (click)='showChart()'>Change Chart</button>
+      <canvas id="oranges" width="100" length="100" style="border: 2px solid black;" hidewhen></canvas>
+      <canvas id="fruit" width="100" length="100" style="border: 2psx solid black;"></canvas>
+      <canvas id="vegetables" width="100" length="100" style="border: 2px solid black;"></canvas>
+
     </div>
   </div>
 

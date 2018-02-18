@@ -9,22 +9,17 @@
 
 
     <ul>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <li><button ion-button menuToggle right id="hamburger">
         <ion-icon name="menu"></ion-icon>
       </button></li>
-      <li class="headtext">Dragons Scouting App</li>
+      <li class="headtext" style="font-size:36px;">Dragons Scouting App</li>
     </ul>
     <head>
 
     </head>
   <br>
-  <!-- <div id='banner-left'>
-    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Dragon_from_Chinese_Dragon_Banner.svg/2000px-Dragon_from_Chinese_Dragon_Banner.svg.png' alt='Dragon Border Left' height="1000" width="400">
-  </div>
-
-  <div id='banner-right'>
-    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Dragon_from_Chinese_Dragon_Banner_Red_Version.svg/2000px-Dragon_from_Chinese_Dragon_Banner_Red_Version.svg.png' height='1000' width='400'>
-  </div> -->
+  
 
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <div class='paralax1'></div>
@@ -41,13 +36,15 @@
     to be one of the best.
 
   </div>
-
-  <div class='paralax2' style='height:250px'></div>
+  <div id='filler'>
+  <div class='paralax2' style='height:200px'></div>
+  </div>
   <div id='body'>
     This app was desgned for the purpse of helping teams organize and gather data about other competeing frc teams. This app provides many
     differant and varrying ways of observing the data that is inserted into it. The graphs tab provides a wide variety of options of data
     show. To insert data about teams into the app, go to the "Edit Data" tab. This will show a list of the teams with data already inputed,
-    along with a button that will prompt a window with options for a new team.
+    along with a button that will prompt a window with options for a new team. To change the lists of teams shown, click on the settings button
+    and click "Change Teams."
 
 </div>
     <script>
@@ -55,7 +52,7 @@
     scrollFunction()
     </script>
 
-    <button  onclick="topFunction()" id='myBtn' title="GoToTop">
+    <button ion-button tappable (click)="scrollToTop()" id='myBtn' title="scrollToTop" hideWhen='scrollAmount > 1'>
       Top
     </button>
 

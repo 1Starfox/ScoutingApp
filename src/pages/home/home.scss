@@ -100,14 +100,19 @@ body, html {
   background-size: contain;
   object-fit: paralax;
 
+
 }
 
 #body{
- font-size: 36px;
+ font-size: 23px;
  color: black;
  //background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyHAMl8ap1H1SHdZkD-XXWRQbBSwwT_g4L5n8B1mQB86wF7_jD');
 border: 15px solid black;
 background-color: #dbd5d2;
+}
+
+#filler{
+  background-color: white;
 }
 #myBtn {
 //    display: none; /* Hidden by default */

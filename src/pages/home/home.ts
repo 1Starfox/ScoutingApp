@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, NgZone } from '@angular/core';
 //import { NavController } from 'ionic-angular';
-import { MenuController } from 'ionic-angular';
+import { MenuController, Content } from 'ionic-angular';
 
 
 @Component({
@@ -10,13 +10,21 @@ import { MenuController } from 'ionic-angular';
 })
 
 export class HomePage {
+  @ViewChild(Content) content: Content;
 
-    constructor(public menuCtrl: MenuController) {
+    constructor(public menuCtrl: MenuController, public zone: NgZone) {
         menuCtrl.enable(true)
       }
-
-
-
+      public scrollAmount = 0;
+      scrollHandler(event) {
+   console.log(`ScrollEvent: ${event}`)
+   console.log('scrollAmount');
+   this.zone.run(()=>{
+     // since scrollAmount is data-binded,
+     // the update needs to happen in zone
+     this.scrollAmount++
+   })
+ }
 
     //
     // openMenu() {
@@ -31,19 +39,10 @@ export class HomePage {
     //     this.menuCtrl.toggle('hello');
     // }
 
-     scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("myBtn").style.display = "block";
-        } else {
-            document.getElementById("myBtn").style.display = "none";
-        }
-    }
+    scrollToTop() {
+     this.content.scrollToTop();
+   }
 
-    // When the user clicks on the button, scroll to the top of the document
-    topFunction() {
-        document.documentElement.scrollTop = 0;
-    }
 
-    //  window.onscroll = function() {scrollFunction()};
 
   }
