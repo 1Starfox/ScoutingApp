@@ -31,7 +31,7 @@
     <ion-list no-lines id="il">
        <ion-item *ngFor="let team of teams" class = "maroonred">  
           <ion-avatar item-start>
-              <img [src]=team.teamImg>
+              <img [src]=team.teamImage>
             </ion-avatar>        
         <button ion-button clear (click) =" showModal(team.teamid);" (press)="pressEvent($event,team.teamid)" class = "maroonred">
             

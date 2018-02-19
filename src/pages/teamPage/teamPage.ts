@@ -136,12 +136,14 @@ export class TeamPage implements OnInit {
         let headers = new Headers()
         headers.append('Content-Type', 'application/json')
         this.http.setDataSerializer('json');
-        this.http.post('http://192.168.0.109:8080/mobile', value, headers)
+        this.http.post('http://192.168.137.1:8080/mobile', value, headers)
             .then(data => {
                 console.log(data.data)
-                if (data.data == 'Sorry Sucka') {
-                    this.showAlert('YESS');
-                }
+                
+                    //this.showAlert(data.data);
+                    var sql = JSON.parse(data.data) as Team[];
+                    this.showAlert(sql[0].teamName);
+                
             })
             .catch(error => {
                 console.log('**', error.error);

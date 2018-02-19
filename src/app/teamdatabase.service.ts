@@ -37,7 +37,7 @@ public js;
 
                 this.db = db;
 
-                var sql = 'create table IF NOT EXISTS team (teamid INTEGER PRIMARY KEY AUTOINCREMENT, teamName VARCHAR(255), teamNum int NOT NULL, teamDesc VARCHAR(255), teamImg TEXT )';
+                var sql = 'create table IF NOT EXISTS team (teamid INTEGER PRIMARY KEY AUTOINCREMENT, teamName VARCHAR(255), teamNum int NOT NULL, teamDesc VARCHAR(255), teamImage TEXT )';
 
                 console.log('Created 1st SQL Statement:' + sql);
  
@@ -84,7 +84,7 @@ public js;
               .catch(e => console.log(e));*/
 
         var sucess;
-        var sql = "Insert into team (teamName, teamNum, teamDesc, teamImg) VALUES ('" + name + "',"+id+",'"+desc+"','"+img+"')";
+        var sql = "Insert into team (teamName, teamNum, teamDesc, teamImage) VALUES ('" + name + "',"+id+",'"+desc+"','"+img+"')";
         let promise = new Promise<any>((resolve) => {
             this.db.executeSql(sql, {})
                 .then((response) => {

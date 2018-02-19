@@ -7,7 +7,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home'
 import { AboutPage } from '../pages/about/about'
 import {ChartsPage } from '../pages/Charts/Charts';
-import { BrowserTeamPage } from '../pages/browserPages/teamBrowserPage/teamBrowserPage';
 
 @Component({
   templateUrl: 'app.html'
@@ -34,7 +33,7 @@ export class MyApp {
       if(plat[0] == "core"){
         // var teamButton = <HTMLButtonElement> document.getElementById("teamPageButton");
         // teamButton.disabled = true;
-        this.teamPage = BrowserTeamPage;
+        //this.teamPage = BrowserTeamPage;
       }
     });
   }

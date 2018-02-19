@@ -4,6 +4,6 @@ export class Team {
     teamName:string;
     teamNum: number;
     teamDesc:string;
-    teamImg: string;
+    teamImage: string;
     
 }
